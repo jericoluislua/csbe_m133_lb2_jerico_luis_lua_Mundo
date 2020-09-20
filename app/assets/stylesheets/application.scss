@@ -14,11 +14,20 @@
  *= require_tree .
  *= require_self
  */
+
+
+.ml-8{
+  margin-left: 6rem !important;
+}
+.mr-8{
+  margin-right: 6rem !important;
+}
+
 body{
   background-color: #080808;
 }
 #A0531C_spade, #black_spade, #white_spade{
-  height: 10em;
+  height: 5em;
 }
 
 .nav-link{
