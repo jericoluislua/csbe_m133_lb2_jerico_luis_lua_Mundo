@@ -14,3 +14,26 @@
  *= require_tree .
  *= require_self
  */
+body{
+  background-color: #080808;
+}
+#A0531C_spade, #black_spade, #white_spade{
+  height: 10em;
+}
+
+.nav-link{
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#footer_hr{
+  background-color: #ffffff;
+}
+
+#footer, #footer_link{
+  color: #A0531C;
+}
+
+#footer_link{
+  text-decoration: underline;
+}
