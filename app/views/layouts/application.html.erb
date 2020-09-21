@@ -10,28 +10,26 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg mb-xl-4">
   <!--https://coderwall.com/p/d1vplg/embedding-and-styling-inline-svg-documents-with-css-in-rails-->
-  <a class="navbar-brand ml-xl-8" href="#"><%= embedded_svg "A0531C_exact.svg" %></a>
+  <a class="navbar-brand ml-xl-8 ml-lg-4 ml-md-3 ml-sm-4 mr-auto" href="/"><%= embedded_svg "A0531C_exact.svg" %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-    <ul class="navbar-nav ml-auto mr-xl-8">
+    <ul class="navbar-nav ml-auto mr-xl-7 mr-md-3">
       <li class="nav-item active">
-        <a class="nav-link mr-xl-4" href="#">DISCOGRAPHY</a>
+        <a class="nav-link mr-xl-4" href="/discography">DISCOGRAPHY</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="#">ABOUT</a>
+        <a class="nav-link mr-xl-4" href="/about">ABOUT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="#">CONTACT</a>
+        <a class="nav-link mr-xl-4" href="/contact">CONTACT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="#">SIGN IN</a>
+        <a class="nav-link mr-xl-4" href="/login">SIGN IN</a>
       </li>
       <li class="nav-item">
         <a class="nav-link mr-xl-4" href="#">REGISTER</a>
@@ -46,7 +44,8 @@
   </main>
   <footer>
     <hr id="footer_hr"/>
-      <p id='footer'>Most photos used are taken by <%=link_to 'Daniel Aguilar', 'https://www.instagram.com/raliugaleinad', id: 'footer_link' %></p>
+    <p id='footer'>Most photos used are taken
+      by <%= link_to 'Daniel Aguilar', 'https://www.instagram.com/raliugaleinad', id: 'footer_link' %></p>
   </footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

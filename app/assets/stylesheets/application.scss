@@ -16,41 +16,69 @@
  */
 
 @media (min-width: 1200px) {
-  .ml-xl-8{
+  .ml-xl-7 {
+    margin-left: 5rem !important;
+  }
+  .mr-xl-7 {
+    margin-right: 5rem !important;
+  }
+  .ml-xl-8 {
     margin-left: 6rem !important;
   }
-  .mr-xl-8{
+  .mr-xl-8 {
     margin-right: 6rem !important;
   }
 }
 
-.ml-8{
+@media (min-width: 1500px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1300px;
+  }
+}
+
+@media (min-width: 1830px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1550px;
+  }
+}
+
+.ml-8 {
   margin-left: 6rem !important;
 }
-.mr-8{
+
+.mr-8 {
   margin-right: 6rem !important;
 }
 
-body{
+body {
   background-color: #080808;
 }
-#A0531C_spade, #black_spade, #white_spade{
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Segoe UI";
+}
+
+h1, .discog-h2, h3 {
+  color: #FFAE20
+}
+
+#A0531C_spade, #black_spade, #white_spade {
   height: 5em;
 }
 
-.nav-link{
+.nav-link {
   color: #ffffff;
   font-size: 20px;
 }
 
-#footer_hr{
+#footer_hr {
   background-color: #ffffff;
 }
 
-#footer, #footer_link{
+#footer, #footer_link {
   color: #A0531C;
 }
 
-#footer_link{
+#footer_link {
   text-decoration: underline;
 }
