@@ -7,14 +7,18 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_include_tag 'navigation_button', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "hamburgers" %>
 </head>
 
 <body>
 <nav class="navbar navbar-expand-lg mb-xl-4">
   <!--https://coderwall.com/p/d1vplg/embedding-and-styling-inline-svg-documents-with-css-in-rails-->
-  <a class="navbar-brand ml-xl-8 ml-lg-4 ml-md-3 ml-sm-4 mr-auto" href="/"><%= embedded_svg "A0531C_exact.svg" %></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <a class="navbar-brand ml-xl-8 ml-lg-4 ml-md-3 ml-sm-4 mr-auto" href="/"><%= embedded_svg "A0531C.svg" %></a>
+  <button class="hamburger hamburger--emphatic navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="hamburger-box">
+      <span class="hamburger-inner navbar-toggler-icon"></span>
+    </div>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -48,6 +52,31 @@
       by <%= link_to 'Daniel Aguilar', 'https://www.instagram.com/raliugaleinad', id: 'footer_link' %></p>
   </footer>
 </div>
+<!--temporary-->
+<script>
+    /**
+     * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+     *
+     * @private
+     * @author Todd Motto
+     * @link https://github.com/toddmotto/foreach
+     * @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
+     * @callback requestCallback      callback   - Callback function for each iteration.
+     * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
+     * @returns {}
+     */
+    var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+
+    var hamburgers = document.querySelectorAll(".hamburger");
+    if (hamburgers.length > 0) {
+        forEach(hamburgers, function(hamburger) {
+            hamburger.addEventListener("click", function() {
+                this.classList.toggle("is-active");
+            }, false);
+        });
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -15,6 +15,12 @@
  *= require_self
  */
 
+$orange: #A0531C;
+$white: #FFFFFF;
+$yellow: #FFAE20;
+
+
+/* @media bootstrap edits or general responsive design*/
 @media (min-width: 1200px) {
   .ml-xl-7 {
     margin-left: 5rem !important;
@@ -42,13 +48,7 @@
   }
 }
 
-.ml-8 {
-  margin-left: 6rem !important;
-}
-
-.mr-8 {
-  margin-right: 6rem !important;
-}
+/* html tags */
 
 body {
   background-color: #080808;
@@ -59,26 +59,54 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 h1, .discog-h2, h3 {
-  color: #FFAE20
+  color: $yellow;
 }
+
+
 
 #A0531C_spade, #black_spade, #white_spade {
   height: 5em;
 }
 
-.nav-link {
-  color: #ffffff;
-  font-size: 20px;
+#A0531C_spade:hover{
+  fill: $white;
+}
+
+#footer, #footer_link, #ivos-spotify-link {
+  color: $orange;
 }
 
 #footer_hr {
-  background-color: #ffffff;
+  background-color: $white;
 }
 
-#footer, #footer_link {
-  color: #A0531C;
-}
 
 #footer_link {
   text-decoration: underline;
 }
+
+.ivos-instructions {
+  color: $white;
+}
+
+#ivos-spotify-link {
+  transition-duration: 0.7s;
+}
+
+#ivos-spotify-link:hover {
+  color: $white;
+}
+
+.ml-8 {
+  margin-left: 6rem !important;
+}
+
+.mr-8 {
+  margin-right: 6rem !important;
+}
+
+.nav-link {
+  color: $white;
+  font-size: 20px;
+}
+
