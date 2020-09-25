@@ -34,11 +34,40 @@ $yellow: #FFAE20;
   .mr-xl-8 {
     margin-right: 6rem !important;
   }
+  .trapezoid {
+    width: 865px;
+    height: 0;
+  }
+  .trapezoid-img-r {
+    border-bottom: 100px solid red;
+    border-left: 100px solid transparent;
+  }
+  .trapezoid-img-l {
+    border-bottom: 100px solid red;
+    border-right: 100px solid transparent;
+
+  }
+
 }
 
 @media (min-width: 1500px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1300px;
+  }
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  .trapezoid {
+    width: 865px;
+    height: 0;
+  }
+  .trapezoid-img-r {
+    border-bottom: 100px solid red;
+    border-left: 100px solid transparent;
+  }
+  .trapezoid-img-l {
+    margin-left: 15px;
+    border-bottom: 100px solid red;
+    border-right: 100px solid transparent;
+
   }
 }
 
@@ -63,12 +92,11 @@ h1, .discog-h2, h3 {
 }
 
 
-
 #A0531C_spade, #black_spade, #white_spade {
   height: 5em;
 }
 
-#A0531C_spade:hover{
+#A0531C_spade:hover {
   fill: $white;
 }
 
