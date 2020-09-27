@@ -22,6 +22,28 @@ $yellow: #FFAE20;
 
 /* @media bootstrap edits or general responsive design*/
 @media (min-width: 1200px) {
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  //class named trapezoid-img
+  .trapezoid-img {
+    width: 100%;
+  }
+  //image tag in a trapezoid-img class
+  .trapezoid-img img {
+    max-height: 200%;
+    min-width: 100%;
+    object-fit: fill;
+    position: relative;
+    top: -60px;
+  }
+
+  .trapezoid-img-r {
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .trapezoid-img-l {
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+  }
+
   .ml-xl-7 {
     margin-left: 5rem !important;
   }
@@ -34,18 +56,7 @@ $yellow: #FFAE20;
   .mr-xl-8 {
     margin-right: 6rem !important;
   }
-  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
-  .trapezoid {
-    border-bottom: 100px solid red;
-  }
-  .trapezoid-img-r {
-    width: 100%;
-    border-left: 100px solid transparent;
-  }
-  .trapezoid-img-l {
-    border-right: 100px solid transparent;
 
-  }
 
 }
 
@@ -54,16 +65,25 @@ $yellow: #FFAE20;
     max-width: 1300px;
   }
   //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
-  .trapezoid {
-    border-bottom: 100px solid red;
+  //class named trapezoid-img
+  .trapezoid-img {
     width: 100%;
+    height: 260px;
+  }
+  //image tag in a trapezoid-img class
+  .trapezoid-img img {
+    max-height: 200%;
+    min-width: 100%;
+    object-fit: fill;
+    position: relative;
+    top: -60px;
   }
 
   .trapezoid-img-r {
-    border-left: 100px solid transparent;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
   .trapezoid-img-l {
-    border-right: 100px solid transparent;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 
   }
 }
@@ -73,18 +93,20 @@ $yellow: #FFAE20;
     max-width: 1550px;
   }
   //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
-  .trapezoid {
-    width: 100%;
-    border-bottom: 100px solid red;
+  //image tag in a trapezoid-img class
+  .trapezoid-img img {
+    max-height: 200%;
+    max-width: 100%;
+    object-fit: fill;
+    position: relative;
   }
 
   .trapezoid-img-r {
-    border-left: 100px solid transparent;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
 
   .trapezoid-img-l {
-    border-right: 100px solid transparent;
-
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
   }
 }
 
