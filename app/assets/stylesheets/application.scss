@@ -34,16 +34,15 @@ $yellow: #FFAE20;
   .mr-xl-8 {
     margin-right: 6rem !important;
   }
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
   .trapezoid {
-    width: 865px;
-    height: 0;
+    border-bottom: 100px solid red;
   }
   .trapezoid-img-r {
-    border-bottom: 100px solid red;
+    width: 100%;
     border-left: 100px solid transparent;
   }
   .trapezoid-img-l {
-    border-bottom: 100px solid red;
     border-right: 100px solid transparent;
 
   }
@@ -56,16 +55,14 @@ $yellow: #FFAE20;
   }
   //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
   .trapezoid {
-    width: 865px;
-    height: 0;
-  }
-  .trapezoid-img-r {
     border-bottom: 100px solid red;
+    width: 100%;
+  }
+
+  .trapezoid-img-r {
     border-left: 100px solid transparent;
   }
   .trapezoid-img-l {
-    margin-left: 15px;
-    border-bottom: 100px solid red;
     border-right: 100px solid transparent;
 
   }
@@ -74,6 +71,20 @@ $yellow: #FFAE20;
 @media (min-width: 1830px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1550px;
+  }
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  .trapezoid {
+    width: 100%;
+    border-bottom: 100px solid red;
+  }
+
+  .trapezoid-img-r {
+    border-left: 100px solid transparent;
+  }
+
+  .trapezoid-img-l {
+    border-right: 100px solid transparent;
+
   }
 }
 
@@ -91,7 +102,11 @@ h1, .discog-h2, h3 {
   color: $yellow;
 }
 
+p {
+  color: $yellow;
+}
 
+/* classes and IDs mostly */
 #A0531C_spade, #black_spade, #white_spade {
   height: 5em;
 }
@@ -136,5 +151,9 @@ h1, .discog-h2, h3 {
 .nav-link {
   color: $white;
   font-size: 20px;
+  transition-duration: 0.3s;
 }
 
+.nav-link:hover{
+  color: $orange;
+}
