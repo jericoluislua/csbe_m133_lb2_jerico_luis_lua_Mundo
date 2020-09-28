@@ -22,27 +22,6 @@ $yellow: #FFAE20;
 
 /* @media bootstrap edits or general responsive design*/
 @media (min-width: 1200px) {
-  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
-  //class named trapezoid-img
-  .trapezoid-img {
-    width: 100%;
-  }
-  //image tag in a trapezoid-img class
-  .trapezoid-img img {
-    max-height: 200%;
-    min-width: 100%;
-    object-fit: fill;
-    position: relative;
-    top: -60px;
-  }
-
-  .trapezoid-img-r {
-    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .trapezoid-img-l {
-    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
-  }
 
   .ml-xl-7 {
     margin-left: 5rem !important;
@@ -58,6 +37,42 @@ $yellow: #FFAE20;
   }
 
 
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  //class named trapezoid-img
+  .trapezoid-img {
+    width: 100%;
+    height: 300px;
+  }
+  //image tag in a trapezoid-img class
+  .trapezoid-img img {
+    max-height: 200%;
+    min-width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .trapezoid-img-l {
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+  }
+
+  #trapezoid-img-l1 {
+
+  }
+
+  .trapezoid-img-r {
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  #trapezoid-img-r1 {
+
+  }
+
+  #trapezoid-img-r2 {
+
+  }
+
+
+
 }
 
 @media (min-width: 1500px) {
@@ -68,23 +83,35 @@ $yellow: #FFAE20;
   //class named trapezoid-img
   .trapezoid-img {
     width: 100%;
-    height: 260px;
+    height: 300px;
   }
   //image tag in a trapezoid-img class
   .trapezoid-img img {
     max-height: 200%;
     min-width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     position: relative;
-    top: -60px;
+  }
+
+  .trapezoid-img-l {
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+  }
+
+  #trapezoid-img-l1 {
+
   }
 
   .trapezoid-img-r {
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
-  .trapezoid-img-l {
-    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 
+  #trapezoid-img-r1 {
+    bottom: 60px;
+    right: 20px;
+  }
+
+  #trapezoid-img-r2 {
+    right: 250px;
   }
 }
 
@@ -93,6 +120,11 @@ $yellow: #FFAE20;
     max-width: 1550px;
   }
   //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  .trapezoid-img {
+    width: 100%;
+    height: 300px;
+  }
+
   //image tag in a trapezoid-img class
   .trapezoid-img img {
     max-height: 200%;
@@ -101,12 +133,26 @@ $yellow: #FFAE20;
     position: relative;
   }
 
+  .trapezoid-img-l {
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+  }
+
+  #trapezoid-img-l1 {
+
+  }
+
   .trapezoid-img-r {
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
   }
 
-  .trapezoid-img-l {
-    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+  #trapezoid-img-r1 {;
+    bottom: 60px;
+  }
+  #trapezoid-img-r2 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -133,9 +179,6 @@ p {
   height: 5em;
 }
 
-#A0531C_spade:hover {
-  fill: $white;
-}
 
 #footer, #footer_link, #ivos-spotify-link {
   color: $orange;
@@ -176,6 +219,6 @@ p {
   transition-duration: 0.3s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: $orange;
 }
