@@ -20,6 +20,12 @@ $white: #FFFFFF;
 $yellow: #FFAE20;
 $red: #860102;
 
+@media (max-width: 1199px) {
+  //https://css-tricks.com/the-shapes-of-css/ inspired to make this shape
+  //class named trapezoid-img
+}
+
+
 /* @media bootstrap edits or general responsive design*/
 @media (min-width: 1200px) {
 
@@ -70,9 +76,6 @@ $red: #860102;
   #trapezoid-img-r2 {
 
   }
-
-
-
 }
 
 @media (min-width: 1500px) {
@@ -166,13 +169,10 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: "Segoe UI";
 }
 
-h1, .discog-h2, h3 {
+h1, .discog-h2, h3, p {
   color: $yellow;
 }
 
-p {
-  color: $yellow;
-}
 
 /* classes and IDs mostly */
 #A0531C_spade, #black_spade, #white_spade {
@@ -184,37 +184,28 @@ p {
   background-color: #E69D1D;
   border-color: #CF8D1A;
 
-  /*
-  color: $orange;
-  background-color: #FFFFFF;
-  border-color: $orange;
-  */
 }
 
 .btn-ivos:hover {
   color: #E69D1D;
   background-color: #790102;
   border-color: #6D0102;
-  /*
-  color: #FFFFFF;
-  background-color: $orange;
-  border-color: #FFFFFF;
-  */
 }
 
+//copied from bootstrap files
 .btn-ivos:not(:disabled):not(.disabled):active, .btn-ivos:not(:disabled):not(.disabled).active,
 .show > .btn-ivos.dropdown-toggle {
   color: #6D0102;
   background-color: #CF8D1A;
   border-color: #BA7F17;
 }
-
+//copied from bootstrap files
 .btn-ivos:not(:disabled):not(.disabled):active:focus, .btn-ivos:not(:disabled):not(.disabled).active:focus,
 .show > .btn-ivos.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgb(230, 155, 25);
 }
 
-#footer, #footer_link, #ivos-spotify-link {
+#footer, #footer_link, #ivos-spotify-link, .nav-link:hover {
   color: $orange;
 }
 
@@ -222,21 +213,8 @@ p {
   background-color: $white;
 }
 
-
 #footer_link {
   text-decoration: underline;
-}
-
-.ivos-instructions {
-  color: $white;
-}
-
-#ivos-spotify-link {
-  transition-duration: 0.7s;
-}
-
-#ivos-spotify-link:hover {
-  color: $white;
 }
 
 .ml-8 {
@@ -251,8 +229,4 @@ p {
   color: $white;
   font-size: 20px;
   transition-duration: 0.3s;
-}
-
-.nav-link:hover {
-  color: $orange;
 }

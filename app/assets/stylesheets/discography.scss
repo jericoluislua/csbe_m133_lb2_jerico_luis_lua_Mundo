@@ -1,3 +1,13 @@
 // Place all the styles related to the discography controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$white: #FFFFFF;
+
+
+.ivos-instructions, #ivos-spotify-link:hover {
+  color: $white;
+}
+
+#ivos-spotify-link {
+  transition-duration: 0.7s;
+}

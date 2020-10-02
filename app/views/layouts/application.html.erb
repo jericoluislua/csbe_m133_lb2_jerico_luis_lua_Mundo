@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-lg mb-xl-4">
   <!--https://coderwall.com/p/d1vplg/embedding-and-styling-inline-svg-documents-with-css-in-rails-->
   <a class="navbar-brand ml-xl-8 ml-lg-4 ml-md-3 ml-sm-4 mr-xl-auto mr-sm-auto" href="/"><%= embedded_svg "A0531C.svg" %></a>
-  <button class="hamburger hamburger--emphatic navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <div class="hamburger-box">
       <span class="hamburger-inner navbar-toggler-icon"></span>
     </div>
@@ -24,20 +24,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto mr-xl-7 mr-md-3">
       <li class="nav-item active">
-        <a class="nav-link mr-xl-4" href="/discography">DISCOGRAPHY</a>
+        <%= link_to 'DISCOGRAPHY', '/discography', class: "nav-link mr-xl-4" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="/about">ABOUT</a>
+        <%= link_to 'ABOUT', '/about', class: "nav-link mr-xl-4" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="/contact">CONTACT</a>
+        <%= link_to 'CONTACT', '/contact', class: "nav-link mr-xl-4" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="/login">SIGN IN</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link mr-xl-4" href="/register">REGISTER</a>
-      </li>
+
+
+      <% if session[:id] %>
+        <li class="nav-item">
+          <%= link_to 'PROFILE', '/profile', class: "nav-link mr-xl-4" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'LOGOUT', 'logout', class: "nav-link mr-xl-4"%>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'LOGIN', '/login', class: "nav-link mr-xl-4" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'REGISTER', '/register', class: "nav-link mr-xl-4" %>
+        </li>
+      <% end %>
 
     </ul>
   </div>
@@ -48,7 +59,8 @@
   </main>
   <footer>
     <hr id="footer_hr"/>
-    <p id='footer'>Most photos used are taken by <%= link_to 'Daniel Aguilar', 'https://www.instagram.com/raliugaleinad', id: 'footer_link' %></p>
+    <p id='footer'>Most photos used are taken
+      by <%= link_to 'Daniel Aguilar', 'https://www.instagram.com/raliugaleinad', id: 'footer_link' %></p>
   </footer>
 </div>
 <!--temporary-->
@@ -64,12 +76,14 @@
      * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
      * @returns {}
      */
-    var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+    var forEach = function (t, o, r) {
+        if ("[object Object]" === Object.prototype.toString.call(t)) for (var c in t) Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t); else for (var e = 0, l = t.length; l > e; e++) o.call(r, t[e], e, t)
+    };
 
     var hamburgers = document.querySelectorAll(".hamburger");
     if (hamburgers.length > 0) {
-        forEach(hamburgers, function(hamburger) {
-            hamburger.addEventListener("click", function() {
+        forEach(hamburgers, function (hamburger) {
+            hamburger.addEventListener("click", function () {
                 this.classList.toggle("is-active");
             }, false);
         });

@@ -2,7 +2,7 @@
 <div class="col-xl-4 pl-0">
   <div class="card">
     <div class="card-body">
-      <%= form_with model: @user, url: create_new_user_path do |f| %>
+      <%= form_with model: @user, url: login_method_path do |f| %>
         <% if flash[:error] %>
           <div class='alert alert-danger'><%= flash[:error] %></div>
         <% end %>
