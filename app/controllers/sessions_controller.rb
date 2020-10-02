@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to action: "profile"
     else
       flash[:controller_error] = "Email or password is invalid"
-      flash[:error] = @user.errors.full_messages
+      # flash[:error] = @user.errors.full_messages
       render "login"
     end
   end
