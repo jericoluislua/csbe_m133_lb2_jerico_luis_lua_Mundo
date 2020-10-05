@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #UsersController idea from https://youtu.be/_rdNv5ijzrk
+  #Register method from https://youtu.be/XE2snJuQsa0
 
   def new
     @user = User.new

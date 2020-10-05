@@ -10,16 +10,29 @@ class SessionsController < ApplicationController
       redirect_to action: "profile"
     else
       flash[:controller_error] = "Email or password is invalid"
-      # flash[:error] = @user.errors.full_messages
       render "login"
     end
   end
 
   def profile
     if session[:id]
+      @user = User.find(session[:id])
     else
       if !session[:id]
         redirect_to(login_form_path)
+      end
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user && @user.authenticate(user_update_params[:old_password]) && user_update_params[:new_password] == user_update_params[:new_password_confirmation]
+      if user.update(user_update_params)
+        flash[:notice] = "success"
+        redirect_to action: "index"
+      else
+        @subjects = Subject.all
+        render action: "edit"
       end
     end
   end
@@ -34,7 +47,14 @@ class SessionsController < ApplicationController
 
   end
 
+  private
+
   def user_params
     params.permit(:email, :password)
+  end
+
+
+  def user_update_params
+    params.require(:user).permit(:firstName, :lastName, :email, :new_password, :new_password_confirmation)
   end
 end
