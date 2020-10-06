@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   #Register method from https://youtu.be/XE2snJuQsa0
 
   def new
-    @user = User.new
+    if session[:id]
+      redirect_to user_profile_path
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -15,6 +19,12 @@ class UsersController < ApplicationController
       redirect_to '/register'
     end
 
+  end
+
+  def destroy
+    reset_session
+    User.find(params[:id]).destroy
+    redirect_to login_form_path
   end
 
   private

@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new', as: 'new_user'
   post 'users/create', to: 'users#create', as: 'create_new_user'
 
+  delete 'users/destroy/:id', to: 'users#destroy', as: 'delete_profile'
+
   # profile = view
   # sessions/update = controller
   get 'profile', to: 'sessions#profile', as: 'user_profile'
-  patch 'sessions/update/:id', to: 'sessions#update', as: 'update_user_profile'
+  patch 'sessions/update', to: 'sessions#update', as: 'update_user_profile'
 
   # login = view
   # sessions/create = controller

@@ -205,6 +205,33 @@ h1, .discog-h2, h3, p {
   box-shadow: 0 0 0 0.2rem rgb(230, 155, 25);
 }
 
+.btn-neg-ivos {
+  color: #E69D1D;
+  background-color: #790102;
+  border-color: #6D0102;
+
+}
+
+.btn-neg-ivos:hover {
+  color: #790102;
+  background-color: #e69d1d;
+  border-color: #cf8d1a;
+}
+
+//copied from bootstrap files
+.btn-neg-ivos:not(:disabled):not(.disabled):active, .btn-neg-ivos:not(:disabled):not(.disabled).active,
+.show > .btn-neg-ivos.dropdown-toggle {
+  color: #cf8d1a;
+  background-color: #790102;
+  border-color: #6d0102;
+}
+//copied from bootstrap files
+.btn-neg-ivos:not(:disabled):not(.disabled):active:focus, .btn-neg-ivos:not(:disabled):not(.disabled).active:focus,
+.show > .btn-neg-ivos.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgb(230, 25, 25);
+}
+
+
 .about_svg {
   height: 4em;
 }

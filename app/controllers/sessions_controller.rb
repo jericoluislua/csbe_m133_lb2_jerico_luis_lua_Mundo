@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if session[:id]
+      redirect_to user_profile_path
+    end
   end
 
   def create
@@ -26,7 +29,12 @@ class SessionsController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user && @user.authenticate(user_update_params[:old_password]) && user_update_params[:new_password] == user_update_params[:new_password_confirmation]
+    if @user && @user.authenticate(user_update_params[:old_password])
+      if !user_update_params[:new_password].blank?
+        if !user_update_params[:new_password_confirmation].blank?
+
+        end
+      end
       if user.update(user_update_params)
         flash[:notice] = "success"
         redirect_to action: "index"
@@ -55,6 +63,11 @@ class SessionsController < ApplicationController
 
 
   def user_update_params
-    params.require(:user).permit(:firstName, :lastName, :email, :new_password, :new_password_confirmation)
+    params.require(:user).permit(:firstName, :lastName, :email, :old_password, :new_password, :new_password_confirmation)
+  end
+
+
+  def user_update_no_new_pass_params
+    params.require(:user).permit(:firstName, :lastName, :email, :old_password)
   end
 end
