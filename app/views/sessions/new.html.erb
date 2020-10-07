@@ -1,10 +1,13 @@
 <h1>Sign In</h1>
 <div class="col-xl-4 pl-0">
+  <% if flash[:success] %>
+    <div class='alert alert-success'><%= flash[:success] %></div>
+  <% end %>
   <div class="card">
     <div class="card-body">
       <%= form_with model: @user, url: login_method_path do |f| %>
-        <% if flash[:error] %>
-          <div class='alert alert-danger'><%= flash[:error] %></div>
+        <% if flash[:controller_error] %>
+          <div class='alert alert-danger'><%= flash[:controller_error] %></div>
         <% end %>
         <!--Email label and text field-->
         <div class="form-group">

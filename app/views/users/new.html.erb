@@ -6,8 +6,13 @@
       <h2 class="d-flex justify-content-center">Register</h2>
       <%= form_with model: @user, url: create_new_user_path do |f| %>
         <% if flash[:error] %>
-          <div class='alert alert-danger'><%= flash[:error] %></div>
+          <% if flash[:error] %>
+            <% flash[:error].each do |err| %>
+              <div class='alert alert-danger'><%= err %></div>
+            <% end %>
+          <% end %>
         <% end %>
+<!--        <div class='alert alert-danger'><%#= flash[:error] %></div>-->
 
         <!--First and last name labels and text fields-->
         <div class="form-group row">
