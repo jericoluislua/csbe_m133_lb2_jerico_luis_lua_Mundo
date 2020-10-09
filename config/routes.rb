@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   delete 'users/destroy/:id', to: 'users#destroy', as: 'delete_profile'
 
-  # profile = view
+  # edit = view
   # sessions/update = controller
-  get 'profile', to: 'sessions#profile', as: 'user_profile'
-  patch 'sessions/update', to: 'sessions#update', as: 'update_user_profile'
+  get 'edit', to: 'sessions#edit', as: 'user_profile'
+  patch 'sessions/update/:id', to: 'sessions#update', as: 'update_user_profile'
 
   # login = view
   # sessions/create = controller

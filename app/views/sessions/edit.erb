@@ -1,19 +1,19 @@
 <h1>Profile</h1>
 <div class="row">
   <div class="col-xl-4">
-    <% if flash[:success] %>
-      <div class='alert alert-success'><%= flash[:success] %></div>
-    <% end %>
     <div class="card">
       <div class="card-body">
         <h2 class="d-flex justify-content-center">Update</h2>
         <%= form_with model: @user, url: update_user_profile_path(@user.id) do |f| %>
-          <% if flash[:error] %>
-            <div class='alert alert-danger'><%= flash[:error] %></div>
+          <% if flash[:error_update] %>
+            <div class='alert alert-danger'><%= flash[:error_update] %></div>
           <% end %>
-
+          <% if flash[:success_update] %>
+            <div class='alert alert-success'><%= flash[:success_update] %></div>
+          <% end %>
           <!--First and last name labels and text fields-->
           <div class="form-group row">
+            <%= f.hidden_field :id, value: @user.id %>
             <div class="col-xl">
               <%= label_tag(:firstName, "First Name:", class: "col-form-label") %>
               <%= f.text_field :firstName, class: "form-control", value: @user.firstName %>
@@ -30,11 +30,29 @@
             <%= label_tag(:email, "Email:", class: "col-form-label") %>
             <%= f.text_field :email, class: "form-control", value: @user.email %>
           </div>
-          <!--Old password label and text field-->
+          <!--Password label and text field-->
           <div class="form-group">
-            <%= label_tag(:old_password, "Old Password:", class: "col-form-label") %>
-            <%= f.password_field :old_password, class: "form-control", value: @user.password %>
+            <%= label_tag(:password, "Password:", class: "col-form-label") %>
+            <%= f.password_field :password, class: "form-control", value: @user.password %>
           </div>
+
+          <%= submit_tag "Update", class: "btn btn-ivos col-form-label" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <% if flash[:success_update_pass] %>
+      <div class='alert alert-success'><%= flash[:success_update_pass] %></div>
+    <% end %>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="d-flex justify-content-center">Update Password</h2>
+        <%= form_with model: @user, url: update_user_profile_path(@user.id) do |f| %>
+          <% if flash[:error] %>
+            <div class='alert alert-danger'><%= flash[:error] %></div>
+          <% end %>
           <!--New password label and text field-->
           <div class="form-group">
             <%= label_tag(:new_password, "New Password:", class: "col-form-label") %>
@@ -45,14 +63,23 @@
             <%= label_tag(:new_password_confirmation, "Confirm New Password:", class: "col-form-label") %>
             <%= f.password_field :new_password_confirmation, class: "form-control" %>
           </div>
+          <!--Old password label and text field-->
+          <div class="form-group">
+            <%= label_tag(:old_password, "Old Password:", class: "col-form-label") %>
+            <%= f.password_field :old_password, class: "form-control", value: @user.password, placeholder: "Confirm password update with old password." %>
+          </div>
 
-          <%= submit_tag "Update", class: "btn btn-ivos col-form-label" %>
+          <%= submit_tag "Update Password", class: "btn btn-ivos col-form-label" %>
 
         <% end %>
       </div>
     </div>
   </div>
+
   <div class="col-xl-4 mt-auto mb-auto text-center">
+    <% if flash[:success_login] %>
+      <div class='alert alert-success'><%= flash[:success_login] %></div>
+    <% end %>
     <p>Delete profile?</p>
 
     <%#= link_to "<button class=></button>" %>
@@ -60,7 +87,7 @@
                   {:controller => "users", :action => "destroy", :id => session[:id]},
                   :method => :delete,
                   class: "btn btn-neg-ivos h-25 w-25 font-weight-bolder text-uppercase img-fluid",
-                  data: {confirm: "Are you sure, you want to delete this profile?"} %>
+                  data: {confirm: "Are you sure, you want to delete this edit?"} %>
   </div>
 </div>
 

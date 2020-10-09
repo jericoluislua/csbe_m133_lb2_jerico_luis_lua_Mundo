@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
 
   end
-  #delete profile = controller
+  #delete edit = controller
   def destroy
     reset_session
     User.find(params[:id]).destroy

@@ -5,21 +5,23 @@ class SessionsController < ApplicationController
       redirect_to user_profile_path
     end
   end
+
   #login method = controller
   def create
     #Finds the user email through the user.email params and checks if the password matches to the email
     @user = User.find_by("email = ?", user_params[:email])
     if @user && @user.authenticate(user_params[:password])
       session[:id] = @user.id
-      flash[:success] = "Successfully logged in"
-      redirect_to action: "profile"
+      flash[:success_login] = "Successfully logged in"
+      redirect_to action: "edit"
     else
       flash[:controller_error] = "Email or password is invalid"
       redirect_to action: "new"
     end
   end
-  #profile = view
-  def profile
+
+  #edit = view
+  def edit
     if session[:id]
       @user = User.find(session[:id])
     else
@@ -28,21 +30,34 @@ class SessionsController < ApplicationController
       end
     end
   end
-  #update profile = controller
+
+  #update edit without new password = controller
   def update
     @user = User.find(params[:id])
-    if
-    if @user && @user.authenticate(user_update_params[:old_password])
-      end
-      if user.update(user_update_params)
-        flash[:notice] = "success"
-        redirect_to action: "index"
-      else
-        @subjects = Subject.all
-        render action: "edit"
-      end
+    if @user && @user.authenticate(user_update_params[:password]) && @user.update(user_update_params)
+      # if @user.update(user_update_params)
+        flash[:success_update] = "Updated successfully."
+        redirect_to action: "edit"
+      # end
+    else
+      flash[:error_update] = "Invalid Password"
+      redirect_to action: "edit"
     end
   end
+
+  #update ONLY edit's password = controller
+  def update_password
+    @user = User.find(params[:id])
+    if @user && @user.authenticate(user_update_params[:old_password])
+    end
+    if @user.update_attributes(user_update_new_pass_params)
+      flash[:notice] = "success"
+      redirect_to action: "edit"
+    else
+      redirect_to action: "edit"
+    end
+  end
+
   #logoout
   def destroy
     if session[:id]
@@ -62,11 +77,11 @@ class SessionsController < ApplicationController
 
 
   def user_update_params
-    params.require(:user).permit(:firstName, :lastName, :email, :old_password, :new_password, :new_password_confirmation)
+    params.require(:user).permit(:firstName, :lastName, :email, :password)
   end
 
 
-  def user_update_no_new_pass_params
-    params.require(:user).permit(:firstName, :lastName, :email, :old_password)
+  def user_update_new_pass_params
+    params.require(:user).permit(:new_password, :new_password_confirmation, :old_password)
   end
 end
