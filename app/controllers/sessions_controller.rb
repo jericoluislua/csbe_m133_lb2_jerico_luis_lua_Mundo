@@ -36,24 +36,11 @@ class SessionsController < ApplicationController
     @user = User.find(params[:id])
     if @user && @user.authenticate(user_update_params[:password]) && @user.update(user_update_params)
       # if @user.update(user_update_params)
-        flash[:success_update] = "Updated successfully."
-        redirect_to action: "edit"
+      flash[:success_update] = "Updated successfully."
+      redirect_to action: "edit"
       # end
     else
       flash[:error_update] = "Invalid Password"
-      redirect_to action: "edit"
-    end
-  end
-
-  #update ONLY edit's password = controller
-  def update_password
-    @user = User.find(params[:id])
-    if @user && @user.authenticate(user_update_params[:old_password])
-    end
-    if @user.update_attributes(user_update_new_pass_params)
-      flash[:notice] = "success"
-      redirect_to action: "edit"
-    else
       redirect_to action: "edit"
     end
   end
@@ -78,10 +65,5 @@ class SessionsController < ApplicationController
 
   def user_update_params
     params.require(:user).permit(:firstName, :lastName, :email, :password)
-  end
-
-
-  def user_update_new_pass_params
-    params.require(:user).permit(:new_password, :new_password_confirmation, :old_password)
   end
 end

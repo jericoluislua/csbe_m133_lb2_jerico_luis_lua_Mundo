@@ -1,0 +1,59 @@
+<h1>Contact</h1>
+<div class="row">
+  <div class="col-xl-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="d-flex justify-content-center">Update</h2>
+        <%= form_with model: @contact, url: contact_method_path do |f| %>
+          <% if flash[:error] %>
+            <% if flash[:error] %>
+              <% flash[:error].each do |err| %>
+                <div class='alert alert-danger'><%= err %></div>
+              <% end %>
+            <% end %>
+          <% end %>
+          <% if flash[:success] %>
+            <div class='alert alert-success'><%= flash[:success] %></div>
+          <% end %>
+          <!--First and last name labels and text fields-->
+          <div class="form-group row">
+            <div class="col-xl">
+              <%= label_tag(:firstName, "First Name:", class: "col-form-label") %>
+              <%= f.text_field :firstName, class: "form-control" %>
+            </div>
+            <div class="col-xl">
+              <%= label_tag(:lastName, "Last Name:", class: "col-form-label") %>
+              <%= f.text_field :lastName, class: "form-control" %>
+            </div>
+          </div>
+          <!--Email label and text field-->
+          <div class="form-group">
+            <%= label_tag(:email, "Email:", class: "col-form-label") %>
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+          <!--Subject label and text field-->
+          <div class="form-group">
+            <%= label_tag(:subject, "Subject:", class: "col-form-label") %>
+            <%= f.text_field :subject, class: "form-control" %>
+          </div>
+          <!--Message label and text area-->
+          <div class="form-group">
+            <%= label_tag(:message, "Message:", class: "col-form-label") %>
+            <%= f.text_area :message, class: "form-control" %>
+          </div>
+
+          <%= submit_tag "Send Email", class: "btn btn-ivos col-form-label" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl mt-auto mb-auto text-center">
+    <p>
+      <%= embedded_svg "email.svg", class: "pr-xl-4" %>for inquiries:
+      <br/> <%= mail_to "ivofspadesbyjerico@gmail.com", "ivofspadesbyjerico@gmail.com", id: "mail_link_contact" %>
+    </p>
+
+  </div>
+</div>

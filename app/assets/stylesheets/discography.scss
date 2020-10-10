@@ -4,10 +4,11 @@
 $white: #FFFFFF;
 
 
+#ivos-spotify-link {
+  transition-duration: 0.7s;
+}
+
 .ivos-instructions, #ivos-spotify-link:hover {
   color: $white;
 }
 
-#ivos-spotify-link {
-  transition-duration: 0.7s;
-}

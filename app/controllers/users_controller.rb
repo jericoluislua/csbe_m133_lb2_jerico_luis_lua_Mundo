@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       @user = User.new
     end
   end
+
   #register method = view
   def create
     @user = User.new(user_params)
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
     end
 
   end
+
   #delete edit = controller
   def destroy
     reset_session

@@ -18,7 +18,10 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  get 'contact', to: 'contact#index', as: 'contact'
+  # contacts = view
+  # contacts/create = create
+  get 'contact', to: 'contacts#new', as: 'contact_form'
+  post 'contact/create', to: 'contacts#create', as: 'contact_method'
 
   get 'about', to: 'about#index', as: 'about'
 

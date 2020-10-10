@@ -1,52 +1,64 @@
 <h1>About</h1>
+<p>6 years ago they had their first meetup as a band, planning what songs they will play in the rehearsal.
+  Blaster asked his brother to write songs on any piece of paper he could find. Blaster took the "paper" his brother
+  wrote on, which was a 4 of Spades card. Back then the band didn't have a name yet so they decided to take on the name
+  "IV of Spades"</p>
 <h2 id="about-h2">Members</h2>
 <h3>Current</h3>
 <div class="row">
-  <div class="col-xl-5 col-lg-4 t-3 order-md-1 order-xl-2">
-    <%= image_tag ("zild.jpg"), class: "img-fluid"%>
+  <div class="col-xl-5 col-lg-4 t-3 order-md-1 order-xl-1">
+    <%= image_tag ("zild.jpg"), class: "img-fluid" %>
   </div>
-  <p class="col-xl-7 col-lg-4 t-3 order-md-2 order-xl-1">
-    Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-    <br> Lorem ipsum
-  </p>
-
-
-  <p class="col-xl-7 col-lg-4 order-md-4 order-xl-4">
-    Lorem ipsum
-  </p>
-  <div class="col-xl-5 col-lg-8 order-md-3 order-xl-3">
-    <%= image_tag ("blaster.jpg"), class: "img-fluid"%>
+  <div class="col-xl-7 col-lg-4 order-md-2 order-xl-2">
+    <h4 class="mb-xl-4"><b>Zild Benitez</b></h4>
+    <p>
+      Current lead vocalist, bassist, writer, pianist and the synth player of IV of Spades.
+    </p>
   </div>
 
-  <div class="col-xl-5 col-md-8 order-md-5 order-xl-6">
-    <%= image_tag ("badjao.jpg"), class: "img-fluid"%>
+
+  <div class="col-xl-7 col-lg-4 order-md-4 order-xl-3 mt-xl-4">
+    <h4 class="mb-xl-4"><b>Blaster Silonga</b></h4>
+    <p>
+      Lead guitarist of IV of Spades.
+    </p>
   </div>
-  <p class="col-xl-7 col-lg-4 order-md-6 order-xl-5">
-    Lorem ipsum
-  </p>
+  <div class="col-xl-5 col-lg-8 order-md-3 order-xl-4 mt-xl-4">
+    <%= image_tag ("blaster.jpg"), class: "img-fluid" %>
+  </div>
+
+  <div class="col-xl-5 col-lg-8 order-md-4 order-xl-5 mt-xl-4 abt-img ">
+    <%= image_tag ("badjao.jpg"), class: "img-fluid" %>
+  </div>
+  <div class="col-xl-7 col-lg-4 order-md-6 order-xl-6 mt-xl-4">
+    <h4 class="mb-xl-4"><b>Badjao De Castro</b></h4>
+    <p>
+      Drummer of IV of Spades.
+    </p>
+  </div>
+
 
 </div>
-<h3>Past</h3>
+<h3 class="mt-xl-5">Past</h3>
 <div class="row">
-  <p class="col-xl-7 col-lg-4 order-md-8">
-    Lorem ipsum
-  </p>
-  <div class="col-xl-5 col-lg-8 order-md-7">
-    <%= image_tag ("unique.jpg"), class: "img-fluid"%>
+  <div class="col-xl-7 col-lg-4 order-md-8 order-xl-7 mt-xl-4">
+    <h4 class="mb-xl-4"><b>Unique Salonga</b></h4>
+    <p>
+      Current lead vocalist, bassist, writer, pianist and the synth player of IV of Spades.
+    </p>
+  </div>
+  <div class="col-xl-5 col-lg-8 order-md-7 mt-xl-4 mb-xl-3">
+    <%= image_tag ("unique.jpg"), class: "img-fluid" %>
   </div>
 </div>
 <div class="d-flex justify-content-center">
   <!-- SVG files used are from https://www.flaticon.com/home -->
   <!-- Original SVG files from the flaticon website are named "x_flat-icon.svg" -->
   <!-- SVGs are edited with Adobe Illustrator as the original files had blank spaces left and right. -->
-  <%= link_to "https://www.instagram.com/ivofspades/", target: :_blank do %><%= embedded_svg "instagram.svg" %><% end %>
-  <%= link_to "https://www.facebook.com/IVOFSPADES/", target: :_blank do %><%= embedded_svg "facebook.svg" %><% end %>
-  <%= link_to "https://twitter.com/IVOFSPADES/", target: :_blank do %><%= embedded_svg "twitter.svg" %><% end %>
+  <%= link_to "https://www.instagram.com/ivofspades/", target: :_blank do %><%= embedded_svg "instagram.svg" %>
+  <% end %>
+  <%= link_to "https://www.facebook.com/IVOFSPADES/", target: :_blank do %><%= embedded_svg "facebook.svg" %>
+  <% end %>
+  <%= link_to "https://twitter.com/IVOFSPADES/", target: :_blank do %><%= embedded_svg "twitter.svg" %>
+  <% end %>
 </div>

@@ -21,7 +21,11 @@ $yellow: #FFAE20;
 $red: #860102;
 
 
-
+@media (min-width: 768px) {
+  .abt-img img {
+    object-fit: fill;
+  }
+}
 
 /* @media bootstrap edits or general responsive design*/
 @media (min-width: 1200px) {
@@ -161,7 +165,7 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: "Segoe UI";
 }
 
-h1, #about-h2, .discog-h2, h3, p {
+h1, #about-h2, .discog-h2, h3, h4, p, #mail_link_contact {
   color: $yellow;
 }
 
@@ -192,6 +196,7 @@ h1, #about-h2, .discog-h2, h3, p {
   background-color: #CF8D1A;
   border-color: #BA7F17;
 }
+
 //copied from bootstrap files
 .btn-ivos:not(:disabled):not(.disabled):active:focus, .btn-ivos:not(:disabled):not(.disabled).active:focus,
 .show > .btn-ivos.dropdown-toggle:focus {
@@ -220,15 +225,20 @@ h1, #about-h2, .discog-h2, h3, p {
   background-color: #790102;
   border-color: #6d0102;
 }
+
 //copied from bootstrap files
 .btn-neg-ivos:not(:disabled):not(.disabled):active:focus, .btn-neg-ivos:not(:disabled):not(.disabled).active:focus,
 .show > .btn-neg-ivos.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgb(230, 25, 25);
 }
 
-
 .about_svg {
   height: 4em;
+}
+
+#email_svg {
+  height: 1.5em;
+  fill: $yellow;
 }
 
 #footer, #footer_link, #ivos-spotify-link, .nav-link:hover {
@@ -241,6 +251,20 @@ h1, #about-h2, .discog-h2, h3, p {
 
 #footer_link {
   text-decoration: underline;
+  transition-duration: 0.7s;
+}
+
+#footer_link:hover {
+  color: $white;
+}
+
+#mail_link_contact {
+  transition-duration: 0.7s;
+}
+
+#mail_link_contact:hover {
+  text-decoration: underline;
+  color: $white;
 }
 
 .ml-8 {

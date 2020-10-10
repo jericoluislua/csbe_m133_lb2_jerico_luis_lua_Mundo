@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg mb-xl-4">
+  <!--https://coderwall.com/p/d1vplg/embedding-and-styling-inline-svg-documents-with-css-in-rails-->
+  <a class="navbar-brand ml-xl-8 ml-lg-4 ml-md-3 ml-sm-4 mr-xl-auto mr-sm-auto" href="/"><%= embedded_svg "A0531C.svg" %></a>
+  <button class="hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="hamburger-box">
+      <span class="hamburger-inner navbar-toggler-icon"></span>
+    </div>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto mr-xl-7 mr-md-3">
+      <li class="nav-item active">
+        <%= link_to 'DISCOGRAPHY', 'discography', class: "nav-link mr-xl-4" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'ABOUT', 'about', class: "nav-link mr-xl-4" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'CONTACT', 'contact', class: "nav-link mr-xl-4" %>
+      </li>
+
+
+      <% if session[:id] %>
+        <li class="nav-item">
+          <%= link_to 'PROFILE', 'edit', class: "nav-link mr-xl-4" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'LOGOUT', 'logout', class: "nav-link mr-xl-4" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'LOGIN', 'login', class: "nav-link mr-xl-4" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'REGISTER', 'register', class: "nav-link mr-xl-4" %>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
