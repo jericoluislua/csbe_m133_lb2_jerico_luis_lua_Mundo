@@ -11,6 +11,6 @@ class ContactBookings < ApplicationMailer
 
   def booking
     @contact = params[:contact]
-    mail(:from => "jericoluislua@yahoo.com.ph", :subject => "test")
+    mail(:from => @contact.email, :subject => @contact.subject)
   end
 end
