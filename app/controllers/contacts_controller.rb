@@ -6,8 +6,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-    if @contact.present?
-      ContactBookings.booking(@contact).deliver_now
+    if @contact.save
+      ContactBookings.with(contact: @contact).booking.deliver_now
       flash[:success] = "Successfully sent email."
       redirect_to action: "new"
     else

@@ -1,5 +1,5 @@
 class ContactBookings < ApplicationMailer
-  default from: "ivofspadesbyjerico@gmail.com"
+  default to: "ivofspadesbyjerico@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,8 +9,8 @@ class ContactBookings < ApplicationMailer
 
   layout "mailer"
 
-  def booking(contact)
-    @contact = contact
-    mail(:from => @contact.email, :subject => "test", :body => "asdfsa")
+  def booking
+    @contact = params[:contact]
+    mail(:from => "jericoluislua@yahoo.com.ph", :subject => "test")
   end
 end

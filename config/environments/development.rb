@@ -28,20 +28,19 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
-
   config.action_mailer.delivery_method = :smtp
+  host = 'http://localhost:3000'
+  config.action_mailer.default_url_options = { host: host }
 
+  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 3587,
-      user_name:            'ivofspadesbyjerico@gmail.com',
-      password:             'Jericoaomine5',
-      authentication:       'plain',
-      enable_starttls_auto: true
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :user_name            => 'ivofspadesbyjerico@gmail.com',
+      :password             => 'ivofspades.csbe2705',
+      :authentication       => "plain",
+      :enable_starttls_auto => true
   }
-
-  config.action_mailer.perform_deliveries = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
