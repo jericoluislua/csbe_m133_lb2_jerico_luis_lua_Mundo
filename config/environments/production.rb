@@ -60,6 +60,21 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "Mundo_production"
 
+  config.action_mailer.delivery_method = :smtp
+  host = 'http://csbe-mundo.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :user_name            => 'ivofspadesbyjerico@gmail.com',
+      :password             => 'wiaedyubuwutkraw',
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+  }
+
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
