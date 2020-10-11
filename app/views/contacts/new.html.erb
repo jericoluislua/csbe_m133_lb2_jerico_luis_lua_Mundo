@@ -3,7 +3,7 @@
   <div class="col-xl-4">
     <div class="card">
       <div class="card-body">
-        <h2 class="d-flex justify-content-center">Update</h2>
+        <h2 class="d-flex justify-content-center">Contact Us</h2>
         <%= form_with model: @contact, url: contact_method_path do |f| %>
           <% if flash[:error] %>
             <% if flash[:error] %>
@@ -42,7 +42,7 @@
             <%= f.text_area :message, class: "form-control" %>
           </div>
 
-          <%= submit_tag "Send Email", class: "btn btn-ivos col-form-label" %>
+          <%= submit_tag "Send Email", class: "btn btn-ivos" %>
 
         <% end %>
       </div>
