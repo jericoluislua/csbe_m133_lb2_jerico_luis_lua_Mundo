@@ -177,15 +177,15 @@ h1, #about-h2, .discog-h2, h3, h4, p, #mail_link_contact {
 
 
 .btn-ivos {
-  color: #790102;
-  background-color: #E69D1D;
+  color: $red;
+  background-color: $yellow;
   border-color: #CF8D1A;
 
 }
 
 .btn-ivos:hover {
-  color: #E69D1D;
-  background-color: #790102;
+  color: $yellow;
+  background-color: $red;
   border-color: #6D0102;
 }
 
@@ -206,15 +206,15 @@ h1, #about-h2, .discog-h2, h3, h4, p, #mail_link_contact {
 
 //neg short for negative:
 .btn-neg-ivos {
-  color: #E69D1D;
-  background-color: #790102;
+  color: $yellow;
+  background-color: $red;
   border-color: #6D0102;
 
 }
 
 .btn-neg-ivos:hover {
-  color: #790102;
-  background-color: #e69d1d;
+  color: red;
+  background-color: $yellow;
   border-color: #cf8d1a;
 }
 
