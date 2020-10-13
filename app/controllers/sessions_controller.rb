@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
       redirect_to action: "edit"
       # end
     else
-      flash[:error_update] = "Invalid Password"
+      flash[:error_update] = "Empty field or invalid password"
       redirect_to action: "edit"
     end
   end
