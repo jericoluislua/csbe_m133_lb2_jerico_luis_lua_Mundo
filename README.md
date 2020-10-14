@@ -46,25 +46,31 @@ Afterwards you are able to run the server with 'rails s'
 <br/>
 'sudo apt-get install -y nodejs'
 <br/>
-<i><b>You have to install yarn or npm</b></i>
+'sudo apt install curl'
 <br/>
-<i><b>install postgresql</b></i>
+<i><b>You have to install yarn or npm</b></i> https://classic.yarnpkg.com/en/docs/install#windows-stable or https://www.npmjs.com/get-npm
+<br/>
+<i>I have only tested yarn so if you aren't sure which to pick, get yarn</i>
+<br/>
+<i><b>install postgresql</b></i> https://www.postgresql.org/download/
 <br/>
 'sudo apt-get install libpq-dev'
 <br/>
+<i><b>install rvm</b></i> https://rvm.io/rvm/install
+<br/>
+Restart after successful installation of rvm
+<br/>
 <h3>in terminal, inside the local repository folder:</h3>
 
-'sudo apt install ruby-railties'
-<br/>
 'sudo gem install bundler:2.1.4'
 <br/>
-'gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB'
+'rvm use ruby-2.7.0 --ruby-version --create'
 <br/>
 <i><b>change terminal to run command as a login shell</b></i>
 <br/>
-<i><b>Install ubuntu_rvm</b></i>
+rvm install 2.7.0
 <br/>
-'rvm use ruby-2.7.0 --ruby-version --create'
+rvm use 2.7.0
 <br/>
 'gem install rails'
 <br/>
