@@ -35,12 +35,10 @@ class SessionsController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user && @user.authenticate(user_update_params[:password]) && @user.update(user_update_params)
-      # if @user.update(user_update_params)
       flash[:success_update] = "Updated successfully."
       redirect_to action: "edit"
-      # end
     else
-      flash[:error_email] = "Email already taken or invalid email"
+      if !user_update_params[
       flash[:error_update] = "Empty field or invalid password"
       redirect_to action: "edit"
     end
