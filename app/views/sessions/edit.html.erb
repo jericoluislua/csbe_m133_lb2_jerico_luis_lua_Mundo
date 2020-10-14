@@ -47,7 +47,6 @@
     <% end %>
     <p>Delete profile?</p>
 
-    <%#= link_to "<button class=></button>" %>
     <%= button_to "delete",
                   {:controller => "users", :action => "destroy", :id => session[:id]},
                   :method => :delete,
