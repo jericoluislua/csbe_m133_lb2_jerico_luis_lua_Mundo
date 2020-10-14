@@ -8,6 +8,9 @@
           <% if flash[:error_update] %>
             <div class='alert alert-danger'><%= flash[:error_update] %></div>
           <% end %>
+          <% if flash[:error_email] %>
+            <div class='alert alert-danger'><%= flash[:error_email] %></div>
+          <% end %>
           <% if flash[:success_update] %>
             <div class='alert alert-success'><%= flash[:success_update] %></div>
           <% end %>
