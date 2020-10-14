@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Successfully logged in" + @user.email
+      flash[:success] = "Successfully registered " + @user.email
       redirect_to login_form_path
     else
       flash[:error] = @user.errors.full_messages
@@ -26,8 +26,9 @@ class UsersController < ApplicationController
   #delete edit = controller
   def destroy
     reset_session
+    flash[:success] = "Account has been deleted."
     User.find(params[:id]).destroy
-    redirect_to login_form_path
+    redirect_to(new_user_path)
   end
 
   private

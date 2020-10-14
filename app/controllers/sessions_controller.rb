@@ -45,10 +45,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  #logoout
+  #logout
   def destroy
     if session[:id]
       reset_session
+      flash[:success] = "Successfully logged out."
       redirect_to(login_form_path)
     else
       redirect_to(login_form_path)
