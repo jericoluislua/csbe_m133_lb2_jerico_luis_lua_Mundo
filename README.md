@@ -48,6 +48,8 @@ Afterwards you are able to run the server with 'rails s'
 <br/>
 <i><b>You have to install yarn or npm</b></i>
 <br/>
+<i><b>install postgresql</b></i>
+'sudo apt-get install libpq-dev'
 <h3>in terminal, inside the local repository folder:</h3>
 
 'sudo apt install ruby-railties'
@@ -65,8 +67,6 @@ Afterwards you are able to run the server with 'rails s'
 'gem install rails'
 <br/>
 'yarn install' or 'npm install'
-<br/>
-<i><b>install postgresql</b></i>
 <br/>
 'bundle install'
 <br/>
