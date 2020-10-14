@@ -58,6 +58,8 @@ Afterwards you are able to run the server with 'rails s'
 <br/>
 <i><b>change terminal to run command as a login shell</b></i>
 <br/>
+<i><b>Install ubuntu_rvm</b></i>
+<br/>
 'rvm use ruby-2.7.0 --ruby-version --create'
 <br/>
 'gem install rails'
