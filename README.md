@@ -66,9 +66,9 @@ Afterwards you are able to run the server with 'rails s'
 <br/>
 'yarn install' or 'npm install'
 <br/>
-'bundle install'
-<br/>
 <i><b>install postgresql</b></i>
+<br/>
+'bundle install'
 <br/>
 'sudo -u postgres createuser user'
 <br/>
