@@ -38,7 +38,6 @@ class SessionsController < ApplicationController
       flash[:success_update] = "Updated successfully."
       redirect_to action: "edit"
     else
-      if !user_update_params[
       flash[:error_update] = "Empty field or invalid password"
       redirect_to action: "edit"
     end
