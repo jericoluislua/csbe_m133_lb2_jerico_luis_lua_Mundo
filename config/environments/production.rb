@@ -69,7 +69,8 @@ Rails.application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :user_name            => 'ivofspadesbyjerico@gmail.com',
-      :password             => 'wiaedyubuwutkraw',
+    # 2 step verification password changed from 'wiaedyubuwutkraw' to 'rolvfcqzdmvmjwkq'
+      :password             => 'rolvfcqzdmvmjwkq',
       :authentication       => "plain",
       :enable_starttls_auto => true
   }
